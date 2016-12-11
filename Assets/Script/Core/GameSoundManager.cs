@@ -40,6 +40,7 @@ public class GameSoundManager : MonoBehaviour {
 	// Update is called once per frame
 	void StartBGM () {
 		audioSourceLoop.volume = 0.5f;
+		audioSourceLoop.PlayScheduled(AudioSettings.dspTime-1);
 		audioSourceLoop.Play();
 	}
 	void StopBGM () {
