@@ -61,11 +61,11 @@ public class BackGroundManager : MonoBehaviour {
 			RendererFade (BGInsList [bgNumBefore]);
 		}
 	}
-	public void StartChange() {
-		if ((BGList.Count-1) > bgNum) {
-			BGInsList [bgNum].transform.position -= new Vector3 (0, 0, 1);
+	public void StartChange(int i) {
+		if ((BGList.Count) > i && i != bgNum) {
+			BGInsList [i].transform.position -= new Vector3 (0, 0, 1);
 			bgNumBefore = bgNum;
-			bgNum++;
+			bgNum=i;
 			isChange = true;
 		}
 

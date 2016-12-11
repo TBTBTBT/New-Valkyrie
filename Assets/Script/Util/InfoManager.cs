@@ -25,4 +25,9 @@ public class InfoManager : MonoBehaviour {
 		time = 180;
 		text.text = "Game Over";
 	}
+	public void StageText(string s,Color c){
+		text.color = c;
+		time = 180;
+		text.text = s;
+	}
 }

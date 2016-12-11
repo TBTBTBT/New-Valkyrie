@@ -31,7 +31,7 @@ public class Enemy12Bullet : EnemyBase {
 	protected override void OverrideUpdate () {
 		angle -= 10;
 		transform.rotation = Quaternion.AngleAxis (angle,new Vector3(0,0,1));
-		if (transform.position.x < -2.5f || transform.position.x > 2.5||transform.position.y<-1.1f)
+		if (transform.position.x < -2.5f || transform.position.x > 2.5f||transform.position.y<-1.1f)
 			Destroy (this.gameObject);
 		
 		rg.velocity = new Vector2 (spd,rg.velocity.y-0.1f * level);

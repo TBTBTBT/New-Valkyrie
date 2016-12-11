@@ -252,6 +252,7 @@ public class Player : MonoBehaviour {
 				rg.velocity = new Vector2 (rg.velocity.x, 1f);
 				if (hp <= 0) {
 					GetComponent<Collider2D> ().enabled = false;
+					transform.localScale = new Vector2 (transform.localScale.x, -2);
 					EventManager.Invoke (ref EventManager.OnPlayerMissed);
 				}
 			}

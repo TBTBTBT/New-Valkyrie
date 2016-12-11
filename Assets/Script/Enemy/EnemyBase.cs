@@ -94,19 +94,21 @@ public class EnemyBase : MonoBehaviour {
 		OverrideOnTriggerStay2D (c);
 	}
 	void OnTriggerExit2D(Collider2D c){
-		int ind = -1;
-		for (int n =0;n<id.Count; n++) {
-			if (c.GetInstanceID () == id [n]) {
-				if (ind == -1)
-					ind = n;
-				else
-					Debug.Log ("InsID Error");
+		if (c.tag == "Bullet") {
+			int ind = -1;
+			for (int n = 0; n < id.Count; n++) {
+				if (c.GetInstanceID () == id [n]) {
+					if (ind == -1)
+						ind = n;
+					else
+						Debug.Log ("InsID Error");
+				}
+			}
+				Debug.Log (ind);
+			if (ind != -1 && id.Count > ind) {
+				id.RemoveAt (ind);
 			}
 		}
-		if (ind != -1) {
-			id.RemoveAt (ind);
-		}
-
 	}
 	public int RetHP(){
 		return hp;
