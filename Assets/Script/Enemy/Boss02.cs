@@ -86,6 +86,9 @@ public class Boss02 : EnemyBase {
 			Lander ();
 		}
 	}
+	protected override void OverrideDestroy(){
+		EventManager.Invoke (ref EventManager.OnDestroyBoss);
+	}
 	IEnumerator Shot(){
 		for(int i=0;i<4 + level;i++){
 			anm.Attack ();

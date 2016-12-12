@@ -24,7 +24,9 @@ public class EventManager : MonoBehaviour {
 	static public UnityEvent OnUpSize;
 	static public UnityEvent OnPlayerAttacked;
 	static public UnityEventIntArg OnDestroyEnemy;
-
+	static public UnityEventIntArg OnStartStage;
+	static public UnityEvent OnSpawnBoss;
+	static public UnityEvent OnDestroyBoss;
 	// Use this for initialization
 	void Awake() {
 		SetEventIntArg (ref OnTouchBegin);
@@ -45,7 +47,10 @@ public class EventManager : MonoBehaviour {
 		SetEvent (ref OnUpAbility);
 		SetEvent (ref OnUpSize);
 		SetEvent (ref OnPlayerAttacked);
+		SetEvent (ref OnSpawnBoss);
+		SetEvent (ref OnDestroyBoss);
 		SetEventIntArg (ref OnDestroyEnemy);
+		SetEventIntArg (ref OnStartStage);
 		//SetEvent (ref OnTouchEnd);
 		//SetEvent (ref OnTouchEnd);
 	}

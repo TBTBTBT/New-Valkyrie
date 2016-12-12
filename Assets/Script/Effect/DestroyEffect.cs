@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DestroyEffect : MonoBehaviour {
 	int time =0;
-	float spd= 1.6f;
+	public float spd= 1.6f;
 	float angle = 0;
 	float r = 0;
 	Rigidbody2D rg;

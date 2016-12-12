@@ -56,7 +56,7 @@ public class Ranking : MonoBehaviour {
 					list.Add( new Rankers( n, s , cc, cm)  );
 					GameObject co = (GameObject)Instantiate(template,new Vector3(0,0,0),Quaternion.identity);
 					co.transform.parent = this.transform;
-					co.transform.GetComponent<RectTransform>().localPosition = new Vector3(0,-(rank-1)*60,0);
+					co.transform.GetComponent<RectTransform>().localPosition = new Vector3(0,-(rank-1)*100,0);
 					co.transform.FindChild("Rank").GetComponent<Text>().text = rank+".";
 					co.transform.FindChild("Name").GetComponent<Text>().text = n;
 					//co.transform.FindChild("Character").GetComponent<RawImage>().img = cc;
@@ -70,7 +70,7 @@ public class Ranking : MonoBehaviour {
 					}
 					//Debug.Log(""+s+","+n);
 					rank++;
-					limitY+=60;
+					limitY+=100;
 
 				}
 				//topRankers = list;

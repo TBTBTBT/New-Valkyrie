@@ -19,6 +19,7 @@ public class Boss01 : EnemyBase {
 		maxHp += 500*level;
 		hp = maxHp;
 		atk += 7*level;
+		//hp = 1;
 		//level = 5;
 		//angry = 1;
 	}
@@ -80,6 +81,9 @@ public class Boss01 : EnemyBase {
 			//Debug.Log ("aa");
 			Lander ();
 		}
+	}
+	protected override void OverrideDestroy(){
+		EventManager.Invoke (ref EventManager.OnDestroyBoss);
 	}
 	IEnumerator Shot(){
 		for(int i=0;i<1 + level;i++){

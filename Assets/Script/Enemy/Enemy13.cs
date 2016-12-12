@@ -7,7 +7,7 @@ public class Enemy13 : EnemyBase {
 	public GameObject bullet;
 	// Use this for initialization
 	protected override void OverrideStart () {
-		spd = level * 1.2f;
+		spd = level * 0.8f;
 		//maxspd =
 
 		Move ();
@@ -15,7 +15,7 @@ public class Enemy13 : EnemyBase {
 	// Update is called once per frame
 	protected override void OverrideUpdate () {
 		actTime++;
-		if (actTime > 30-level*5) {
+		if (actTime > 50-level*5) {
 			actTime = 0;
 			StartCoroutine ("Shot");
 		}

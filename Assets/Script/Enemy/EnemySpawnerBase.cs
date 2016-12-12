@@ -11,8 +11,8 @@ public class EnemySpawnerBase : MonoBehaviour {
 	int timeMax = 600;
 	int enemynum = 0;
 	int level = 0;
-	int spawnNum = 0;
-	int stage = 1;
+	public int spawnNum = 1;
+	public int stage = 1;
 	int stageMax = 3;
 	GameObject bossIns;
 	public BackGroundManager BGManager;
@@ -21,8 +21,6 @@ public class EnemySpawnerBase : MonoBehaviour {
 	void Start () {
 		time =590;
 		isBossSpawn= false;
-		spawnNum = 1;
-		stage = 1;
 		//enemynum = 3;
 	}
 	void Spawn(int i,Vector3 pos,List<GameObject> enemyList){
@@ -44,7 +42,9 @@ public class EnemySpawnerBase : MonoBehaviour {
 			//		timeMax -= 40;
 				spawnNum = 1;
 				isBossSpawn = false;
-				timeMax =0;
+				time = 0;
+				timeMax =300;
+				im.StageText ("Stage "+stage+"\nClear!!",new Color(0.3f,0.3f,0.0f));
 				if (stage < stageMax)
 					stage++;
 				else {
@@ -88,6 +88,7 @@ public class EnemySpawnerBase : MonoBehaviour {
 	void Stage1(){
 		switch (spawnNum) {
 		case 1:
+			EventManager.InvokeIntArg (ref EventManager.OnStartStage, 1);
 			BGManager.StartChange (0);
 			im.StageText ("Stage "+stage+"\n\"Green Field\"",new Color(0.1f,0.3f,0.2f));
 			spawnNum++;
@@ -148,6 +149,7 @@ public class EnemySpawnerBase : MonoBehaviour {
 			break;
 		case 11:
 			if (isBossSpawn == false) {
+				EventManager.Invoke (ref EventManager.OnSpawnBoss);
 				BossSpawn (0, new Vector3 (1.2f, 2f, 0));
 				isBossSpawn = true;
 			}
@@ -163,6 +165,7 @@ public class EnemySpawnerBase : MonoBehaviour {
 	void Stage2(){
 		switch (spawnNum) {
 		case 1:
+			EventManager.InvokeIntArg (ref EventManager.OnStartStage, 2);
 			im.StageText ("Stage "+stage+"\n\"Ice Cave\"",new Color(0.1f,0.2f,0.3f));
 			BGManager.StartChange (1);
 			spawnNum++;
@@ -178,28 +181,31 @@ public class EnemySpawnerBase : MonoBehaviour {
 			spawnNum++;
 			StartCoroutine (Wave1 (0, 4, level + 1, enemyList2));
 			StartCoroutine (Wave1 (1, 4, level + 1, enemyList2));
-			timeMax = 600;
+			timeMax = 400;
 			break;
 		case 4:
 			spawnNum++;
 			StartCoroutine (Wave1 (0, 5, level + 1, enemyList2));
 			StartCoroutine (Wave1 (1, 2, level + 1, enemyList2));
+			timeMax = 500;
 			break;
 		case 5:
 			spawnNum++;
-			StartCoroutine (Wave3 (0, 0, level + 1, enemyList2));
-			StartCoroutine (Wave3 (1, 0, level + 1, enemyList2));
+			StartCoroutine (Wave3_2 (0, 0, level + 1, enemyList2));
+			StartCoroutine (Wave3_2 (1, 0, level + 1, enemyList2));
+			timeMax = 600;
 			break;
 		case 6:
 			spawnNum++;
 			StartCoroutine (Wave5 (0, 1, level + 1, enemyList2));
 			StartCoroutine (Wave3 (1, 1, level + 1, enemyList2));
+			timeMax = 300;
 			break;
 		case 7:
 			spawnNum++;
 			StartCoroutine (Wave1 (0, 4, level + 1, enemyList2));
 			StartCoroutine (Wave1 (1, 4, level + 1, enemyList2));
-			timeMax = 300;
+			timeMax = 500;
 			break;
 		case 8:
 			spawnNum++;
@@ -224,6 +230,7 @@ public class EnemySpawnerBase : MonoBehaviour {
 			break;
 		case 11:
 			if (isBossSpawn == false) {
+				EventManager.Invoke (ref EventManager.OnSpawnBoss);
 				BossSpawn (1, new Vector3 (1.2f, 2f, 0));
 				isBossSpawn = true;
 			}
@@ -239,6 +246,7 @@ public class EnemySpawnerBase : MonoBehaviour {
 			break;
 		case 2:
 			if (isBossSpawn == false) {
+				EventManager.Invoke (ref EventManager.OnSpawnBoss);
 				BossSpawn (2, new Vector3 (1.2f, 2f, 0));
 				isBossSpawn = true;
 			}
@@ -266,6 +274,13 @@ public class EnemySpawnerBase : MonoBehaviour {
 				Spawn (num, new Vector3 (-3.33f + 6.66f * dir, (2 - i) * 0.2f - 0.3f, 1 + hp),enemyList);
 			yield return new WaitForSeconds (3f); 
 		}
+	}
+	IEnumerator Wave3_2(int dir,int num,int hp,List<GameObject> enemyList){
+		if(num < enemyList.Count)for (int i = 0; i < 3; i++) {
+
+				Spawn (num, new Vector3 (-2.1f + 4.2f * dir, (3 - i) * 0.2f - 0.3f, 1 + hp),enemyList);
+				yield return new WaitForSeconds (2f); 
+			}
 	}
 	IEnumerator Wave4(int dir,int num,int hp,List<GameObject> enemyList){
 		if(num < enemyList.Count)for (int i = 0; i < 3; i++) {

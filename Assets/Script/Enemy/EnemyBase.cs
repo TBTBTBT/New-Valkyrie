@@ -81,6 +81,7 @@ public class EnemyBase : MonoBehaviour {
 
 				} else {
 					c.GetComponent<BulletBase> ().DestroyEnemy (value);
+					OverrideDestroy ();
 					EventManager.InvokeIntArg (ref EventManager.OnDestroyEnemy, score);
 					Instantiate (hit,new Vector3(transform.position.x,transform.position.y,0),Quaternion.identity);
 					Instantiate (hit,new Vector3(transform.position.x,transform.position.y,0),Quaternion.identity);
@@ -93,6 +94,7 @@ public class EnemyBase : MonoBehaviour {
 		}
 		OverrideOnTriggerStay2D (c);
 	}
+	protected virtual void OverrideDestroy(){}
 	void OnTriggerExit2D(Collider2D c){
 		if (c.tag == "Bullet") {
 			int ind = -1;

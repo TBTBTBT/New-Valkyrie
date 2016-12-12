@@ -176,10 +176,10 @@ public class Player : MonoBehaviour {
 			}
 			if (val == 0) {
 				
-				if (hp < maxHp)
-					hp += num * 4;
 				if (maxHp < 999)
 					maxHp+=num * 2;
+				if (hp < maxHp)
+					hp += num * 4;
 				if (maxHp > 999)
 					maxHp = 999;
 				if (hp > maxHp)
