@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using System.Collections;
 
 public class UnityEventIntArg : UnityEvent <int>{}
+public class UnityEventGameObjectArg : UnityEvent <GameObject>{}
 public class UnityEventVecIntArg : UnityEvent <Vector2,int>{}
 public class EventManager : MonoBehaviour {
 	static public UnityEventIntArg OnTouchBegin;
@@ -25,8 +26,19 @@ public class EventManager : MonoBehaviour {
 	static public UnityEvent OnPlayerAttacked;
 	static public UnityEventIntArg OnDestroyEnemy;
 	static public UnityEventIntArg OnStartStage;
+	static public UnityEventGameObjectArg OnChangeBoss;
 	static public UnityEvent OnSpawnBoss;
 	static public UnityEvent OnDestroyBoss;
+	static public UnityEvent OnDestroyBoss03;
+	static public UnityEvent OnDestroyBoss03Break;
+	static public UnityEvent OnDestroyBoss04;
+	static public UnityEvent OnDestroyBoss04Break;
+	static public UnityEvent OnDestroyBoss05;
+	static public UnityEvent OnDestroyBoss05Break;
+	static public UnityEvent OnShotBoss;
+	static public UnityEvent OnLandBoss;
+	static public UnityEvent OnFire;
+	static public UnityEvent OnLaser;
 	// Use this for initialization
 	void Awake() {
 		SetEventIntArg (ref OnTouchBegin);
@@ -49,8 +61,19 @@ public class EventManager : MonoBehaviour {
 		SetEvent (ref OnPlayerAttacked);
 		SetEvent (ref OnSpawnBoss);
 		SetEvent (ref OnDestroyBoss);
+		SetEvent (ref OnDestroyBoss03);
+		SetEvent (ref OnDestroyBoss04);
+		SetEvent (ref OnDestroyBoss05);
+		SetEvent (ref OnDestroyBoss03Break);
+		SetEvent (ref OnDestroyBoss04Break);
+		SetEvent (ref OnDestroyBoss05Break);
+		SetEvent (ref OnShotBoss);
+		SetEvent (ref OnFire);
+		SetEvent (ref OnLaser);
+		SetEvent (ref OnLandBoss);
 		SetEventIntArg (ref OnDestroyEnemy);
 		SetEventIntArg (ref OnStartStage);
+		SetEventGameObjectArg (ref OnChangeBoss);
 		//SetEvent (ref OnTouchEnd);
 		//SetEvent (ref OnTouchEnd);
 	}
@@ -69,6 +92,11 @@ public class EventManager : MonoBehaviour {
 			u = new UnityEventVecIntArg ();
 		}
 	}
+	void SetEventGameObjectArg(ref UnityEventGameObjectArg u ){
+		if (u == null) {
+			u = new UnityEventGameObjectArg ();
+		}
+	}
 	static public void Invoke(ref UnityEvent u ){
 		if (u != null) {
 			u.Invoke();
@@ -82,6 +110,11 @@ public class EventManager : MonoBehaviour {
 	static public void InvokeVecIntArg(ref UnityEventVecIntArg u ,Vector2 a,int b){
 		if (u != null) {
 			u.Invoke(a,b);
+		}
+	}
+	static public void InvokeGameObjectArg(ref UnityEventGameObjectArg u ,GameObject a){
+		if (u != null) {
+			u.Invoke(a);
 		}
 	}
 	// Update is called once per frame

@@ -62,7 +62,7 @@ public class Boss02Animation : MonoBehaviour {
 		}
 	}
 	public void Land(){
-		if(animationNum!=0)ChangeAnimation (0,normal);
+		if(animationNum!=0&&animationNum!=2)ChangeAnimation (0,normal);
 	}
 	public void Jump(){
 		ChangeAnimation (1,jump);

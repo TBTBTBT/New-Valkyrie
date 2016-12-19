@@ -36,7 +36,7 @@ public class EnemyBase : MonoBehaviour {
 		//level = 5;
 		atk =1 + (int)(transform.position.z/5f);
 		transform.position = new Vector3 (transform.position.x, transform.position.y, 0);
-		ChangeDirectionToPlayer ();
+		//ChangeDirectionToPlayer ();
 		OverrideStart ();
 
 	}
@@ -102,11 +102,11 @@ public class EnemyBase : MonoBehaviour {
 				if (c.GetInstanceID () == id [n]) {
 					if (ind == -1)
 						ind = n;
-					else
-						Debug.Log ("InsID Error");
+				//	else
+				//		Debug.Log ("InsID Error");
 				}
 			}
-				Debug.Log (ind);
+		//		Debug.Log (ind);
 			if (ind != -1 && id.Count > ind) {
 				id.RemoveAt (ind);
 			}

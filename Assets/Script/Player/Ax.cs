@@ -36,6 +36,9 @@ public class Ax : BulletBase {
 		}
 
 	}
+	protected override void Grav(){
+		rg.velocity = new Vector2(rg.velocity.x,rg.velocity.y - 0.1f);
+	}
 	void Refrect(){
 		if (transform.position.x <= -1.7f) {
 			transform.position = new Vector3(-1.7f,transform.position.y,transform.position.z);

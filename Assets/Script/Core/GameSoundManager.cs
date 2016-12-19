@@ -18,6 +18,11 @@ public class GameSoundManager : MonoBehaviour {
 	public AudioClip charge;
 	public AudioClip clear;
 	public AudioClip bossDestroy;
+	public AudioClip bossbullet;
+	public AudioClip bosslaser;
+	public AudioClip fire;
+	public AudioClip bossland;
+	//public AudioClip ;
 	// Use this for initialization
 	void Start () {
 		audioSource = gameObject.AddComponent<AudioSource>();
@@ -40,6 +45,15 @@ public class GameSoundManager : MonoBehaviour {
 		EventManager.OnSpawnBoss.AddListener (()=>{FadeBGM(1);});
 		EventManager.OnDestroyBoss.AddListener (StopBGM);
 		EventManager.OnStartStage.AddListener (StartStageBGM);
+		EventManager.OnDestroyBoss03.AddListener (()=>{StopBGM();audioSource.PlayOneShot(bossDestroy);});
+		EventManager.OnDestroyBoss03Break.AddListener (()=>{audioSource.PlayOneShot(clear);});
+		EventManager.OnDestroyBoss04.AddListener (()=>{StopBGM();audioSource.PlayOneShot(bossDestroy);});
+		EventManager.OnDestroyBoss04Break.AddListener (()=>{StartBGM (1);});
+		EventManager.OnDestroyBoss05.AddListener (()=>{StopBGM();audioSource.PlayOneShot(bossDestroy);});
+		EventManager.OnDestroyBoss05Break.AddListener (FinalBossDestroy);
+		EventManager.OnShotBoss.AddListener (BossBullet);
+		EventManager.OnLaser.AddListener (BossLaser);
+		EventManager.OnFire.AddListener (Fire);
 		audioSource.volume =0.5f;
 		//FadeBGM (1);
 	}
@@ -49,7 +63,7 @@ public class GameSoundManager : MonoBehaviour {
 		if (n == 2)
 		if(audioSourceLoop.isPlaying == false)StartBGM (2);
 		if (n == 3)
-		if(audioSourceLoop.isPlaying == false)StartBGM (0);
+		if(audioSourceLoop.isPlaying == false)StartBGM (3);
 		
 		
 	}
@@ -73,6 +87,12 @@ public class GameSoundManager : MonoBehaviour {
 		StartCoroutine (Clear ());
 
 	}
+
+	void FinalBossDestroy(){
+		//audioSource.PlayOneShot(bossDestroy);
+		StartCoroutine (Clear ());
+
+	}
 	void Jump () {
 		audioSource.PlayOneShot(jump);
 	}
@@ -89,6 +109,26 @@ public class GameSoundManager : MonoBehaviour {
 	void Catch () {
 
 		audioSource.PlayOneShot(catchax);
+
+	}
+	void Fire() {
+
+		audioSource.PlayOneShot(fire);
+
+	}
+	void BossBullet () {
+
+		audioSource.PlayOneShot(bossbullet);
+
+	}
+	void BossLaser () {
+
+		audioSource.PlayOneShot(bosslaser);
+
+	}
+	void BossLand () {
+
+		audioSource.PlayOneShot(bossland);
 
 	}
 	void ChargeStart () {
@@ -119,7 +159,7 @@ public class GameSoundManager : MonoBehaviour {
 	}
 	IEnumerator Clear(){
 		audioSource.PlayOneShot(bossDestroy);
-			yield return new WaitForSeconds (1.1f);
+			yield return new WaitForSeconds (1.2f);
 
 		audioSource.PlayOneShot(clear);
 

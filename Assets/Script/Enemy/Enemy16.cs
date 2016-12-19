@@ -12,12 +12,13 @@ public class Enemy16 : EnemyBase {
 		atk += 5 * level;
 		maxHp += 3 * level;
 		hp = maxHp;
+		ChangeDirectionToPlayer ();
 	}
 	// Update is called once per frame
 	protected override void OverrideUpdate () {
 			Move ();
 		acttime++;
-		if (acttime > 45 - level * 5) {
+		if (acttime > 100 - level * 5) {
 			StartCoroutine("Shot");
 			acttime = 0;
 		}

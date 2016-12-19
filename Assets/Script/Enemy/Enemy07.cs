@@ -13,6 +13,7 @@ public class Enemy07 : EnemyBase {
 		anm = GetComponent<Enemy04Animation> ();
 		transform.position = new Vector2 (transform.position.x,0.8f);
 		atk += 7 * level;
+		ChangeDirectionToPlayer ();
 	}
 	// Update is called once per frame
 	protected override void OverrideUpdate () {

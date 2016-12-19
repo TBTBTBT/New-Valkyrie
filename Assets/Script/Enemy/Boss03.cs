@@ -14,12 +14,14 @@ public class Boss03 : EnemyBase {
 	Boss02Animation anm;
 	public GameObject bullet;
 	public GameObject bullet2;
+	public GameObject breakobj;
 	Vector3 pos;
 	// Use this for initialization
 	protected override void OverrideStart () {
 		anm = GetComponent<Boss02Animation> ();
 		maxHp += 1500*level;
 		hp = maxHp;
+	//	hp = 1;
 		atk += 10*level;
 		pos = transform.position;
 	//	level = 5;
@@ -99,18 +101,23 @@ public class Boss03 : EnemyBase {
 		}
 	}
 	protected override void OverrideDestroy(){
-		EventManager.Invoke (ref EventManager.OnDestroyBoss);
+	//	EventManager.Invoke (ref EventManager.OnDestroyBoss);
+		GameObject o = (GameObject)Instantiate (breakobj, transform.position, Quaternion.identity);
+		EventManager.InvokeGameObjectArg (ref EventManager.OnChangeBoss, o);
+		EventManager.Invoke (ref EventManager.OnDestroyBoss03);
 	}
 	IEnumerator Shot(){
 		for(int i=0;i<4 + level;i++){
 			anm.Attack ();
 			GameObject b = (GameObject)Instantiate (bullet, new Vector3 (direction == true?transform.position.x +0.2f:transform.position.x -0.2f,transform.position.y,0),Quaternion.identity);
 			b.GetComponent<Boss03Bullet> ().Direction(direction,1+i);
+			EventManager.Invoke (ref EventManager.OnFire);
 			yield return new WaitForSeconds (0.25f-0.03f * level);
 		}
 	}
 	IEnumerator Shot2(){
 		for(int i=0;i<3 + level;i++){
+			EventManager.Invoke (ref EventManager.OnFire);
 			Instantiate (bullet2, new Vector3 (direction == true?transform.position.x +0.2f:transform.position.x -0.2f,transform.position.y,0),Quaternion.identity);
 			//b.GetComponent<Boss02Bullet> ().Direction(direction);
 			yield return new WaitForSeconds (0.3f-0.05f * level);

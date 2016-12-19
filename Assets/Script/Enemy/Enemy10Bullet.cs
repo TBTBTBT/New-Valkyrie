@@ -10,7 +10,7 @@ public class Enemy10Bullet : EnemyBase {
 	Vector2 aim;
 	// Use this for initialization
 	protected override void OverrideStart () {
-
+		transform.localScale = new Vector3 (2, 2, 1);
 		maxHp += level*50;
 		hp = maxHp;
 		atk += 1*level;
@@ -21,8 +21,6 @@ public class Enemy10Bullet : EnemyBase {
 		d = aim - d;
 		aim = d;
 		angle = Mathf.Atan2 (d.y, d.x) *180/ Mathf.PI;
-		if (d.x < 0)
-			angle -= 180;
 		transform.rotation = Quaternion.AngleAxis (angle,new Vector3(0,0,1));
 	}
 	// Update is called once per frame

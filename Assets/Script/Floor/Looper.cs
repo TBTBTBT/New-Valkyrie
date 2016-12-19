@@ -14,7 +14,10 @@ public class Looper : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		transform.position = new Vector3 (transform.position.x - speed,transform.position.y,transform.position.z);
-		if (transform.position.x < loopPos.x) {
+		if (speed >= 0&&transform.position.x < loopPos.x) {
+			transform.position = new Vector3 (transform.position.x + loopMax,transform.position.y,transform.position.z);
+		}
+		if (speed < 0 && transform.position.x > loopPos.x) {
 			transform.position = new Vector3 (transform.position.x + loopMax,transform.position.y,transform.position.z);
 		}
 	}

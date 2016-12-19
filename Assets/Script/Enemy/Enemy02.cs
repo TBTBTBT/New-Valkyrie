@@ -9,6 +9,7 @@ public class Enemy02 : EnemyBase{
 	protected override void OverrideStart () {
 		stopTime = 360;
 		speed = 3;
+		ChangeDirectionToPlayer ();
 		aimY = 0;
 	}
 	

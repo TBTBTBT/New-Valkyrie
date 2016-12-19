@@ -14,6 +14,7 @@ public class Enemy06 : EnemyBase {
 		hp *= 2;
 		spd = level * 0.05f;
 		maxspd = level * 0.1f;
+		ChangeDirectionToPlayer ();
 	}
 	// Update is called once per frame
 	protected override void OverrideUpdate () {

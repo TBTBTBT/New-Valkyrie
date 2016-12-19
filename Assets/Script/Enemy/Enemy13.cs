@@ -9,7 +9,7 @@ public class Enemy13 : EnemyBase {
 	protected override void OverrideStart () {
 		spd = level * 0.8f;
 		//maxspd =
-
+		ChangeDirectionToPlayer ();
 		Move ();
 	}
 	// Update is called once per frame

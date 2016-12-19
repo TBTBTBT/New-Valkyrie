@@ -11,6 +11,7 @@ public class Enemy17 : EnemyBase {
 		atk += 5 * level;
 		maxHp += 3 * level;
 		hp = maxHp;
+		ChangeDirectionToPlayer ();
 	}
 	// Update is called once per frame
 	protected override void OverrideUpdate () {

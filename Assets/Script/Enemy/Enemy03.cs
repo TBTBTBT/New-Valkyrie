@@ -10,6 +10,7 @@ public class Enemy03 : EnemyBase{
 		speed = 1;
 		hp *= 2;
 		maxHp *= 2;
+		ChangeDirectionToPlayer ();
 	}
 	
 	// Update is called once per frame

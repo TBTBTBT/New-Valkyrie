@@ -11,6 +11,7 @@ public class Enemy12: EnemyBase {
 		//anm = GetComponent<Enemy04Animation> ();
 		spd = level * 0.05f;
 		maxspd = level * 0.3f;
+		ChangeDirectionToPlayer ();
 	}
 	// Update is called once per frame
 	protected override void OverrideUpdate () {

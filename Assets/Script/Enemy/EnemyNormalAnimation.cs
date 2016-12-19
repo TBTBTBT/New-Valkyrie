@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class EnemyNormalAnimation : MonoBehaviour {
 	public List<Sprite>normal;
+	public List<Sprite>action;
 	// Use this for initialization
 	SpriteRenderer sprite;
 	int num;

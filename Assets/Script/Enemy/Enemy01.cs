@@ -10,6 +10,7 @@ public class Enemy01 : EnemyBase{
 		speed = level;
 		atk += 1 * level;
 		atk*=2;
+		ChangeDirectionToPlayer ();
 	}
 	
 	// Update is called once per frame

@@ -3,7 +3,6 @@ using System.Collections;
 //[RequireComponent(typeof(Enemy04Animation))]
 //hpslime
 public class Boss03Bullet2 : EnemyBase {
-	int dir = 0;
 	float spd = 0.1f;
 	float angle;
 	//Enemy04Animation anm;
@@ -26,7 +25,7 @@ public class Boss03Bullet2 : EnemyBase {
 	protected override void OverrideUpdate () {
 		if (transform.position.x < -2.5f || transform.position.x > 2.5f||transform.position.y<-1.1f||transform.position.y>1.1f)
 			Destroy (this.gameObject);
-		spd += 0.05f + (level-1)*0.05f;
+		spd += 0.02f + (level-1)*0.02f;
 		rg.velocity = new Vector2 (spd*(aim.x/aim.magnitude),spd*(aim.y/aim.magnitude));
 
 	}

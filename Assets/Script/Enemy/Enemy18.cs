@@ -27,7 +27,8 @@ public class Enemy18 : EnemyBase {
 		if (acttime > 45 - level * 5) {
 			acttime = 0;
 		}
-			
+		if (transform.position.x < -3.5f || transform.position.x > 3.5f)
+			Destroy (this.gameObject);
 	}
 	void Move(){
 		angle += 10 * level;

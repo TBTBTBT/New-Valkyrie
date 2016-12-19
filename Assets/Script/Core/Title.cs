@@ -5,13 +5,19 @@ public class Title : MonoBehaviour {
 
 	void Start () {
 		//EventManager.OnTouchBegin.AddListener(StartGame);
+		Statics.Reset();
 	}
 
 	// Update is called once per frame
 	public void StartGame (int num) {
 		if (!Application.isShowingSplashScreen) {
 			//スプラッシュ表示後
-			Application.LoadLevel ("Stage01");
+			if (Statics.isWatchOpening == false) {
+				Statics.isWatchOpening = true;
+				Application.LoadLevel ("Opening");
+			} else {
+				Application.LoadLevel ("Stage01");
+			}
 		}
 	}
 	public void GoRanking (int num) {

@@ -13,6 +13,7 @@ public class Enemy10: EnemyBase {
 		//level = 5;
 		maxspd = level/2f;
 		atmax = 60 - level * 3;
+		ChangeDirectionToPlayer ();
 	}
 	// Update is called once per frame
 	protected override void OverrideUpdate () {

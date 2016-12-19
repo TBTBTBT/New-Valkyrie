@@ -6,6 +6,9 @@ public class EntryDatabase : MonoBehaviour {
 	public Text name;
 	public Text comment;
 	public void Send(){
+		if(Statics.coin > 10){
+			Statics.coin -= 10;
+			
 		NCMBObject testRank = new NCMBObject("TestRank");
 
 
@@ -18,6 +21,7 @@ public class EntryDatabase : MonoBehaviour {
 		testRank["comment"] = comment.text;
 		// データストアへの登録
 		testRank.SaveAsync(new NCMBCallback ((NCMBException e)=>{Application.LoadLevel ("Ranking"); Statics.objectId = testRank.ObjectId;}));
+	}
 	}
 	
 	// Update is called once per frame

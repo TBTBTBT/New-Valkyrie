@@ -75,9 +75,8 @@ public class BulletBase : MonoBehaviour {
 		Grav ();
 		OverrideFixedUpdate ();
 	}
-	void Grav(){
-	rg.velocity = new Vector2(rg.velocity.x,rg.velocity.y - 0.1f);
-	}
+
+	protected virtual void Grav(){}
 	public void SetPower(float p,int dir){
 		pow = p;
 		OverrideSetVelocity (dir);
