@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 	int gameOverTime = 0;
+
 	// Use this for initialization
 	void Start () {
 		gameOverTime = 0;

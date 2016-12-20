@@ -30,7 +30,7 @@ public class EnemyBase : MonoBehaviour {
 		sprite.color = new Color(0.5f,0.5f,0.5f);
 		maxHp = (int)transform.position.z;
 		hp = maxHp;
-		level =  1 +(int)(transform.position.z/20f);
+		level =  Statics.level+1;
 		if (level > 5)
 			level = 5;
 		//level = 5;

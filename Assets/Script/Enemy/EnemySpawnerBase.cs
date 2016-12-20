@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 public class EnemySpawnerBase : MonoBehaviour {
+	public List<GameObject> player;
 	public List<GameObject> enemyList1;
 	public List<GameObject> enemyList2;
 	public List<GameObject> enemyList3;
@@ -11,17 +12,28 @@ public class EnemySpawnerBase : MonoBehaviour {
 	int timeMax = 600;
 	int enemynum = 0;
 	int level = 0;
+	int newLevel = 0;
 	public int spawnNum = 1;
 	public int stage = 1;
 	int stageMax = 4;
 	GameObject bossIns;
 	public BackGroundManager BGManager;
+	public WhiteFade wf;
 	bool isBossSpawn= false;
+	void Awake(){
+		if (Statics.charactor < player.Count) {
+			Instantiate (player [Statics.charactor], new Vector3 (0, 0, 0), Quaternion.identity);
+		}
+		else {
+			Instantiate (player [0], new Vector3 (0, 0, 0), Quaternion.identity);
+		}
+	}
 	// Use this for initialization
 	void Start () {
 		time =590;
 		isBossSpawn= false;
 		EventManager.OnChangeBoss.AddListener (ChangeBoss);
+		newLevel = Statics.level;
 		//level = 10;
 		//enemynum = 3;
 	}
@@ -49,10 +61,13 @@ public class EnemySpawnerBase : MonoBehaviour {
 				isBossSpawn = false;
 				time = 0;
 				timeMax =300;
-				im.StageText ("Stage "+stage+"\nClear!!",new Color(0.2f,0.2f,0.2f));
-				if (stage < stageMax)
+
+				if (stage < stageMax) {
+					im.StageText ("Stage "+stage+"\nClear!!",new Color(0.2f,0.2f,0.2f));
 					stage++;
+				}
 				else {
+					wf.FadeOutCoroutine (()=>{Application.LoadLevel("EndingMovie");});
 					spawnNum++;
 					//stage = 1;
 				}
@@ -349,82 +364,83 @@ public class EnemySpawnerBase : MonoBehaviour {
 	}
 	//slime * 3 
 	IEnumerator Wave1(int dir,int num,int hp,List<GameObject> enemyList){
-		if(num < enemyList.Count)for (int i = 0; i < 2; i++) {
+		if(num < enemyList.Count)for (int i = 0; i < 2+newLevel; i++) {
 			
 				Spawn (num, new Vector3 (-2.33f + 4.66f * dir, Random.Range (0, 5) * 0.2f - 0.3f, 1 + hp),enemyList);
-			yield return new WaitForSeconds (4f); 
+				yield return new WaitForSeconds (4f-newLevel*0.7f); 
 		}
 	}
 	IEnumerator Wave2(int dir,int num,int hp,List<GameObject> enemyList){
-		if(num < enemyList.Count)for (int i = 0; i < 2; i++) {
+		if(num < enemyList.Count)for (int i = 0; i < 2+newLevel; i++) {
 
 				Spawn (num, new Vector3 (-3.33f + 6.66f * dir, Random.Range (0, 5) * 0.2f - 0.3f, 1 + hp),enemyList);
-			yield return new WaitForSeconds (4f); 
+				yield return new WaitForSeconds (4f-newLevel*0.7f); 
 		}
 	}
 	IEnumerator Wave3(int dir,int num,int hp,List<GameObject> enemyList){
-		if(num < enemyList.Count)for (int i = 0; i < 3; i++) {
+		if(num < enemyList.Count)for (int i = 0; i < 3+newLevel; i++) {
 
-				Spawn (num, new Vector3 (-3.33f + 6.66f * dir, (2 - i) * 0.2f - 0.3f, 1 + hp),enemyList);
-			yield return new WaitForSeconds (3f); 
+				Spawn (num, new Vector3 (-3.33f + 6.66f * dir, ((2+newLevel) - i) * 0.2f - 0.3f, 1 + hp),enemyList);
+				yield return new WaitForSeconds (3f-newLevel*0.6f); 
 		}
 	}
 	IEnumerator Wave3_2(int dir,int num,int hp,List<GameObject> enemyList){
-		if(num < enemyList.Count)for (int i = 0; i < 3; i++) {
+		if(num < enemyList.Count)for (int i = 0; i < 3+newLevel; i++) {
 
 				Spawn (num, new Vector3 (-2.1f + 4.2f * dir, (3 - i) * 0.2f - 0.3f, 1 + hp),enemyList);
-				yield return new WaitForSeconds (2f); 
+				yield return new WaitForSeconds (2f-newLevel*0.4f); 
 			}
 	}
 	IEnumerator Wave4(int dir,int num,int hp,List<GameObject> enemyList){
-		if(num < enemyList.Count)for (int i = 0; i < 3; i++) {
+		if(num < enemyList.Count)for (int i = 0; i < 3+newLevel; i++) {
 
 				Spawn (num, new Vector3 (-3.33f + 6.66f * dir,Random.Range (0, 5) * 0.2f - 0.3f, 1 + hp),enemyList);
-			yield return new WaitForSeconds (1.5f); 
+				yield return new WaitForSeconds (1.5f-newLevel*0.2f); 
 		}
 	}
 	IEnumerator Wave5(int dir,int num,int hp,List<GameObject> enemyList){
-		if(num < enemyList.Count)for (int i = 0; i < 3; i++) {
+		if(num < enemyList.Count)for (int i = 0; i < 3+newLevel; i++) {
 
 				Spawn (num, new Vector3 (-3.33f + 6.66f * dir,Random.Range (0, 5) * 0.2f - 0.3f, 1 + hp),enemyList);
-				yield return new WaitForSeconds (0.5f); 
+				yield return new WaitForSeconds (0.5f-newLevel*0.08f); 
 			}
 	}
 	IEnumerator Wave6(int dir,int num,int hp,List<GameObject> enemyList){
 		if (num < enemyList.Count)
 			for (int j = 0; j < 2; j++) {
-				for (int i = 0; i < 3; i++) {
+				for (int i = 0; i < 3+newLevel; i++) {
 
 					Spawn (num, new Vector3 (-3.33f + 6.66f * dir, Random.Range (0, 5) * 0.2f - 0.3f, 1 + hp), enemyList);
-					yield return new WaitForSeconds (0.5f); 
+					yield return new WaitForSeconds (0.5f-newLevel*0.08f); 
 				}
-				yield return new WaitForSeconds (1.5f);
+				yield return new WaitForSeconds (1.5f-newLevel*0.2f);
 			}
 	}
 	IEnumerator Wave7(int dir,int num,int hp,List<GameObject> enemyList){
 		if (num < enemyList.Count)
-			for (int j = 0; j < 2; j++) {
+			for (int j = 0; j < 2+newLevel; j++) {
 
 					Spawn (num, new Vector3 (-1.8f + 3.6f * dir, 1.2f, 1 + hp), enemyList);
 
-				yield return new WaitForSeconds (2.5f);
+				yield return new WaitForSeconds (2.5f-newLevel*0.4f);
 			}
 	}
 	IEnumerator Wave8(int dir,int num,int hp,List<GameObject> enemyList){
 		if (num < enemyList.Count)
-			for (int j = 0; j < 4; j++) {
+			for (int j = 0; j < 4+newLevel; j++) {
 
 				Spawn (num, new Vector3 (Random.Range(-1.8f,1.8f), 1.2f, 1 + hp), enemyList);
 
-				yield return new WaitForSeconds (0.5f);
+				yield return new WaitForSeconds (0.5f-newLevel*0.08f);
 			}
 	}
 	IEnumerator Shot(int num,List<GameObject> enemyList){
 		for(int j=0;j<3;j++){
 		for(int i=0;i<4;i++){
+			EventManager.Invoke(ref EventManager.OnShotBoss);
 			//anm.Attack ();
 			Spawn (num, new Vector3 (Random.Range(-1.2f,1.2f),-1f + Random.Range (0, 2)*2f,0),enemyList);
-			yield return new WaitForSeconds (0.15f-0.02f * level);
+			yield return new WaitForSeconds (0.15f);
 		}
 			yield return new WaitForSeconds (1f);
 		}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class OpManager : MonoBehaviour {
 	public AudioClip op;
 	AudioSource audioSource; 
@@ -35,7 +35,8 @@ public class OpManager : MonoBehaviour {
 		e.transform.position = enemy;
 	}
 	public void Skip (){
-		Application.LoadLevel ("Stage01");
+		SceneManager.LoadScene ("Stage01");
+
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -126,7 +127,8 @@ public class OpManager : MonoBehaviour {
 				player.x += 0.03f;
 		}
 		else {
-			Application.LoadLevel ("Stage01");
+			SceneManager.LoadScene ("Stage01");
+
 		}
 		p.transform.position = player;
 		p2.transform.position = player2;

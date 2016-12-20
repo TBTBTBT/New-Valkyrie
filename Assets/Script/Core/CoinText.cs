@@ -7,7 +7,6 @@ public class CoinText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		text = GetComponent<Text> ();
-		Statics.coin = 0;
 	}
 	
 	// Update is called once per frame

@@ -38,6 +38,11 @@ public class FireBullet : BulletBase {
 			Destroy (this.gameObject);
 			EventManager.Invoke (ref EventManager.OnEndCombo);
 		}
+
+	}
+	void LateUpdate(){
+		if (transform.position.y < -0.4f)
+			transform.position = new Vector3 (transform.position.x,-0.4f,transform.position.z);
 	}
 	protected override void OverrideSetVelocity(int dir){
 		if(dir == 1)rg.velocity = new Vector2 (0.5f+pow/2,-pow*0.4f);

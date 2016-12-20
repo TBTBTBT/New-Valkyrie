@@ -90,7 +90,7 @@ public class GameSoundManager : MonoBehaviour {
 
 	void FinalBossDestroy(){
 		//audioSource.PlayOneShot(bossDestroy);
-		StartCoroutine (Clear ());
+		audioSource.PlayOneShot(bossDestroy);
 
 	}
 	void Jump () {

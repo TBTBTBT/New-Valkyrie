@@ -3,41 +3,41 @@
 [RequireComponent(typeof(Camera))]
 public abstract class FadeBase : MonoBehaviour
 {
-	#region Fields
+//	#region Fields
 
 	private Material m_Material;
 
-	#endregion
+//	#endregion
 
-	#region Properties
+//	#region Properties
 
 	public abstract string ShaderName { get; }
 
 	protected Material Material { get { return m_Material; } }
 
-	#endregion
+//	#endregion
 
-	#region Messages
+//	#region Messages
 
-	protected virtual void Awake()
-	{
-		Shader shader = Shader.Find(ShaderName);
-		m_Material = new Material(shader);
-	}
+	//protected virtual void Awake()
+	//{
+	//	Shader shader = Shader.Find(ShaderName);
+	//	m_Material = new Material(shader);
+	//}
 
-	protected virtual void OnRenderImage(RenderTexture source, RenderTexture destination)
-	{
-		UpdateMaterial();
+	//protected virtual void OnRenderImage(RenderTexture source, RenderTexture destination)
+	//{
+	//	UpdateMaterial();
 
-		Graphics.Blit(source, destination, m_Material);
-	}
+	//	Graphics.Blit(source, destination, m_Material);
+	//}
 
-	#endregion
+//	#endregion
 
-	#region Methods
+//	#region Methods
 
 	protected abstract void UpdateMaterial();
 
-	#endregion
+//	#endregion
 
 }

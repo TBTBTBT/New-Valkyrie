@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class TitleButtonManager : MonoBehaviour {
 	public Button start;
 	public Button ranking;
@@ -17,6 +17,7 @@ public class TitleButtonManager : MonoBehaviour {
 		hard.gameObject.SetActive (false);
 		extra.gameObject.SetActive (false);
 		back.gameObject.SetActive (false);
+		Statics.Reset();
 	}
 	public void PushStart(){
 		start.gameObject.SetActive (false);
@@ -38,34 +39,47 @@ public class TitleButtonManager : MonoBehaviour {
 		//start.gameObject.SetActive (false);
 		if (!Application.isShowingSplashScreen) {
 			//スプラッシュ表示後
-			Application.LoadLevel ("Ranking");
+			SceneManager.LoadScene  ("Ranking");
 		}
 	}
 	public void PushNormal(){
 		if (!Application.isShowingSplashScreen) {
 			//スプラッシュ表示後
+			Statics.level = 0;
 			if (Statics.isWatchOpening == false) {
 				Statics.isWatchOpening = true;
-				Application.LoadLevel ("Opening");
+				SceneManager.LoadScene ("Opening");
 			} else {
-				Application.LoadLevel ("Stage01");
-			}
+				SceneManager.LoadScene ("Stage01");
+						}
 		}
 	//	start.gameObject.SetActive (false);
 	}
 	public void PushHard(){
 		if (!Application.isShowingSplashScreen) {
 			//スプラッシュ表示後
+			Statics.level = 2;
 			if (Statics.isWatchOpening == false) {
 				Statics.isWatchOpening = true;
-				Application.LoadLevel ("Opening");
+				SceneManager.LoadScene  ("Opening");
+
 			} else {
-				Application.LoadLevel ("Stage01");
+			SceneManager.LoadScene ("Stage01");
+			//	if(Statics.charactor == 1)SceneManager.LoadScene ("Stage02");
 			}
 		}
 	//	start.gameObject.SetActive (false);
 	}
 	public void PushExtra(){
+		switch (Statics.charactor) {
+		case 0:
+			Statics.charactor = 1;
+			break;
+		case 1:
+			Statics.charactor = 0;
+			break;
+
+		}
 	//	start.gameObject.SetActive (false);
 	}
 

@@ -27,6 +27,8 @@ public class ComboManager : MonoBehaviour {
 	}
 	void End(){
 		text.text = "";
+		if (Statics.comboMax < Statics.combo)
+			Statics.comboMax = Statics.combo;
 		Statics.combo = 0;
 	}
 	IEnumerator Renew(){
