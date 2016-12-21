@@ -37,6 +37,7 @@ public class BulletBase : MonoBehaviour {
 	protected virtual void OverrideFixedUpdate(){}
 	protected virtual void OverrideSetVelocity(int dir){}
 	public void HitEnemy(){
+		cantCatchTime = 33;
 		/*
 		if(level<5)level++;
 		//if (level > 5)
@@ -53,7 +54,7 @@ public class BulletBase : MonoBehaviour {
 		OverrideHitEnemy ();
 	}
 	public void DestroyEnemy(int v){
-		cantCatchTime = 20;
+		cantCatchTime = 33;
 		if(level<5)level++;
 		if (level > 5)
 			level = 5;
@@ -72,7 +73,7 @@ public class BulletBase : MonoBehaviour {
 	public virtual void OverrideHitEnemy(){}
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(cantCatchTime <25)cantCatchTime++;
+		if(cantCatchTime <45)cantCatchTime++;
 		Grav ();
 		OverrideFixedUpdate ();
 	}
@@ -83,7 +84,7 @@ public class BulletBase : MonoBehaviour {
 		OverrideSetVelocity (dir);
 	}
 	void OnTriggerStay2D(Collider2D c){
-		if (c.transform.tag == "Player" && cantCatchTime >= 20) {
+		if (c.transform.tag == "Player" && cantCatchTime >= 40) {
 			c.GetComponent <Player>().HitBullet(value,level);
 			Destroy (this.gameObject);
 		}

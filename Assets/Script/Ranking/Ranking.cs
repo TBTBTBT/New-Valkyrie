@@ -17,14 +17,15 @@ public class Rankers{
 }
 public class Ranking : MonoBehaviour {
 	public GameObject template;
-	List<GameObject>rankingList;
-	List<Rankers> list = new List<Rankers>();
+	public List<Texture> texture;
+	//List<GameObject>rankingList;
+	//List<Rankers> list = new List<Rankers>();
 	Camera cam;
 	float limitY = 0;
 	float accY = 0;
 	// Use this for initialization
 	void Send(){
-		NCMBObject testRank = new NCMBObject("TestRank");
+		NCMBObject testRank = new NCMBObject("Ranking");
 
 		// オブジェクトに値を設定
 		testRank["name"] = "Hello";
@@ -35,7 +36,7 @@ public class Ranking : MonoBehaviour {
 		testRank.SaveAsync(new NCMBCallback ((NCMBException e)=>{Debug.Log("succeed");}));
 	}
 	void Get(){
-		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("TestRank");
+		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("Ranking");
 		query.OrderByDescending ("score");
 		query.Limit = 20;
 		query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
@@ -50,15 +51,30 @@ public class Ranking : MonoBehaviour {
 				// 取得したレコードをscoreクラスとして保存
 				foreach (NCMBObject obj in objList) {
 					int    s = System.Convert.ToInt32(obj["score"]);
+					int    combo = System.Convert.ToInt32(obj["combo"]);
 					string n = System.Convert.ToString(obj["name"]);
 					int cc = System.Convert.ToInt32(obj["character"]);
+					int lv = System.Convert.ToInt32(obj["level"]);
+					int cl = System.Convert.ToInt32(obj["isCleard"]);
 					string cm = System.Convert.ToString(obj["comment"]);
-					list.Add( new Rankers( n, s , cc, cm)  );
+					//list.Add( new Rankers( n, s , cc, cm)  );
 					GameObject co = (GameObject)Instantiate(template,new Vector3(0,0,0),Quaternion.identity);
 					co.transform.parent = this.transform;
 					co.transform.GetComponent<RectTransform>().localPosition = new Vector3(0,-(rank-1)*100,0);
 					co.transform.FindChild("Rank").GetComponent<Text>().text = rank+".";
+					if(rank == 1)co.transform.FindChild("Rank").GetComponent<Text>().color = new Color(0.4f,0.3f,0f);
+					if(rank == 1)co.transform.FindChild("Score").GetComponent<Text>().color = new Color(0.4f,0.3f,0f);
+					if(rank == 1)co.transform.FindChild("Combo").GetComponent<Text>().color = new Color(0.6f,0.3f,0f);
+					if(rank == 1)co.transform.FindChild("RawImage").GetComponent<RawImage>().color = new Color(0.9f,0.7f,0f);
+					if(rank == 3)co.transform.FindChild("RawImage").GetComponent<RawImage>().color = new Color(0.8f,0.4f,0.3f);
+					if(rank == 2)co.transform.FindChild("RawImage").GetComponent<RawImage>().color = new Color(0.6f,0.6f,0.7f);
+					if(cl == 1)co.transform.FindChild("Clear").GetComponent<RawImage>().enabled=true;
+					else co.transform.FindChild("Clear").GetComponent<RawImage>().enabled=false;
+					if(lv == 2)co.transform.FindChild("Hard").GetComponent<RawImage>().enabled=true;
+					else co.transform.FindChild("Hard").GetComponent<RawImage>().enabled=false;
+					co.transform.FindChild("Character").GetComponent<RawImage>().texture = texture[cc];
 					co.transform.FindChild("Name").GetComponent<Text>().text = n;
+					co.transform.FindChild("Combo").GetComponent<Text>().text = "<color=#333311>max:</color>"+combo+"<color=#333311>combo</color>";
 					//co.transform.FindChild("Character").GetComponent<RawImage>().img = cc;
 					co.transform.FindChild("Score").GetComponent<Text>().text = ""+s;
 					co.transform.FindChild("Comment").GetComponent<Text>().text = cm;

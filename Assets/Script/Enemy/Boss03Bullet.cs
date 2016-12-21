@@ -20,7 +20,7 @@ public class Boss03Bullet : EnemyBase {
 	protected override void OverrideStart () {
 		maxHp += level*50;
 		hp = maxHp;
-		atk += 1*level;
+		atk += 2 +level;
 		//level = 5;
 		//if (spd > 0)
 			//spd += (level-1) * 0.5f;

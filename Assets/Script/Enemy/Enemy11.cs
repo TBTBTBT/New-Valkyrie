@@ -9,7 +9,7 @@ public class Enemy11 : EnemyBase {
 	// Use this for initialization
 	protected override void OverrideStart () {
 		anm = GetComponent<Enemy04Animation> ();
-		maxspd = level * 1.5f;
+		maxspd =  1f + level *0.5f;
 		maxHp = 10 * level;
 		hp = maxHp;
 		atk += level * 2;

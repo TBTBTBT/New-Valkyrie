@@ -10,6 +10,7 @@ public class Enemy24 : EnemyBase {
 	protected override void OverrideStart () {
 		maxHp *= 2;
 		hp *= 2;
+		atk += level;
 		ChangeDirectionToPlayer ();
 		maxspd = 0.8f+level * 0.5f;
 	}

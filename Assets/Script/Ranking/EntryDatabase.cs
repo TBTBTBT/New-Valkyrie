@@ -8,16 +8,20 @@ public class EntryDatabase : MonoBehaviour {
 	public void Send(){
 		if(Statics.coin > 10){
 			Statics.coin -= 10;
-			
-		NCMBObject testRank = new NCMBObject("TestRank");
+			Statics.Save ();
+		NCMBObject testRank = new NCMBObject("Ranking");
 
 
 		// オブジェクトに値を設定
 
 		testRank["name"] = name.text;
 		if(name.text == "")testRank["name"] ="No name";
-		testRank["character"] = 0;
+			testRank["character"] = Statics.charactor;
 		testRank["score"] =Statics.score;
+		testRank["combo"] =Statics.comboMax;
+		testRank["level"] =Statics.level;
+		testRank["isCleard"] =Statics.isCleard;
+		//testRank["score"] =Statics.score;
 		testRank["comment"] = comment.text;
 		// データストアへの登録
 		testRank.SaveAsync(new NCMBCallback ((NCMBException e)=>{Application.LoadLevel ("Ranking"); Statics.objectId = testRank.ObjectId;}));

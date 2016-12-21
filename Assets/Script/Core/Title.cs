@@ -6,6 +6,7 @@ public class Title : MonoBehaviour {
 	void Start () {
 		//EventManager.OnTouchBegin.AddListener(StartGame);
 		Statics.Reset();
+		Statics.Load ();
 	}
 
 	// Update is called once per frame

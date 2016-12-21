@@ -11,6 +11,7 @@ public class Enemy20 : EnemyBase {
 	// Use this for initialization
 	protected override void OverrideStart () {
 		anm = GetComponent<Enemy04Animation> ();
+		atk += level - 1;
 		maxHp *= 2;
 		hp *= 2;
 		spd = 1f+level * 0.5f;

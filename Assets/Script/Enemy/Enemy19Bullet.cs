@@ -21,7 +21,7 @@ public class Enemy19Bullet : EnemyBase {
 	protected override void OverrideStart () {
 		maxHp += level*50;
 		hp = maxHp;
-		atk += 1*level;
+		atk += 2*level;
 		//level = 5;
 
 		spd = 1 + (level - 1) * 0.5f;

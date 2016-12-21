@@ -12,7 +12,7 @@ public class Boss03Bullet2 : EnemyBase {
 
 		maxHp += level*50;
 		hp = maxHp;
-		atk += 1*level;
+		atk += 2+level;
 		//level = 5;
 		spd = 0;
 		aim = player.transform.position;

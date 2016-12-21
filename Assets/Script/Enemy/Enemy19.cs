@@ -15,6 +15,7 @@ public class Enemy19 : EnemyBase {
 		spd = level * 0.05f;
 		maxspd = 1f+ level * 0.2f;
 		ChangeDirectionToPlayer ();
+		atk += 2 + level;
 	}
 	// Update is called once per frame
 	protected override void OverrideUpdate () {

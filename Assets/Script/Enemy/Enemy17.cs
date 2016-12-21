@@ -8,7 +8,7 @@ public class Enemy17 : EnemyBase {
 	protected override void OverrideStart () {
 		//anm = GetComponent<Enemy04Animation> ();
 		transform.position = new Vector2 (transform.position.x,-0.8f);
-		atk += 5 * level;
+		atk += 4 + level;
 		maxHp += 3 * level;
 		hp = maxHp;
 		ChangeDirectionToPlayer ();

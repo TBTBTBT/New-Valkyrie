@@ -69,6 +69,7 @@ public class EnemySpawnerBase : MonoBehaviour {
 				else {
 					wf.FadeOutCoroutine (()=>{Application.LoadLevel("EndingMovie");});
 					spawnNum++;
+					Statics.isCleard = 1;
 					//stage = 1;
 				}
 

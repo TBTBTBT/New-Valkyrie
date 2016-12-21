@@ -23,6 +23,9 @@ public class WhiteFade :MonoBehaviour {
 	public void FadeOutCoroutine(UnityAction callback){
 		StartCoroutine(FOC(callback));
 	}
+	public void FadeOutCoroutineFast(UnityAction callback){
+		StartCoroutine(FOCF(callback));
+	}
 	public void FadeIn(float i){
 		if (color > 0)
 			color-=i;
@@ -44,7 +47,14 @@ public class WhiteFade :MonoBehaviour {
 	//}
 	IEnumerator FOC(UnityAction callback){
 		while (color < 100) {
-			FadeOut (1);
+			FadeOut (0.5f);
+			yield return new WaitForEndOfFrame();
+		}
+		callback();
+	}
+	IEnumerator FOCF(UnityAction callback){
+		while (color < 100) {
+			FadeOut (3f);
 			yield return new WaitForEndOfFrame();
 		}
 		callback();

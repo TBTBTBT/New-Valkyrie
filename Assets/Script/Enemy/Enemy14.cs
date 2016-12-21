@@ -11,7 +11,7 @@ public class Enemy14 : EnemyBase {
 	// Use this for initialization
 	protected override void OverrideStart () {
 		anm = GetComponent<Enemy04Animation> ();
-		spd =  1.8f + level;
+		spd =  1.8f + level*0.5f;
 		ChangeDirectionToPlayer ();
 		//maxspd = level * 0.4f;
 	}

@@ -50,10 +50,10 @@ public class Enemy12: EnemyBase {
 		}
 	}
 	IEnumerator Shot(){
-		for(int i=0;i<1;i++){
+		for(int i=0;i<1+level;i++){
 			GameObject b = (GameObject)Instantiate (bullet, new Vector3 (transform.position.x,transform.position.y,2),Quaternion.identity);
 			b.GetComponent<Enemy12Bullet> ().Direction(direction);
-			yield return new WaitForSeconds (0.15f * level);
+			yield return new WaitForSeconds (0.1f);
 		}
 	}
 }

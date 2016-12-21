@@ -8,6 +8,7 @@ public class CoinAdder : MonoBehaviour {
 	void Start () {
 		text = GetComponent < Text> ();
 		Statics.coin+=(int)(Statics.score / 20000);
+		Statics.Save ();
 		text.text = "<color=#ffff00>coin</color><color=#44ccff> + " + (int)(Statics.score / 20000)+"</color>";
 	}
 

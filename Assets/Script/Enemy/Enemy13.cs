@@ -7,7 +7,7 @@ public class Enemy13 : EnemyBase {
 	public GameObject bullet;
 	// Use this for initialization
 	protected override void OverrideStart () {
-		spd = level * 0.8f;
+		spd = 0.4f + level * 0.4f;
 		//maxspd =
 		ChangeDirectionToPlayer ();
 		Move ();

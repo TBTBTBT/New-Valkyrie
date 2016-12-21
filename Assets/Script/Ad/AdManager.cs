@@ -18,6 +18,7 @@ public class AdManager : MonoBehaviour {
 		case ShowResult.Finished:
 			Debug.Log("The ad was successfully shown.");
 			Statics.coin += 20;
+			Statics.Save ();
 			//
 			// YOUR CODE TO REWARD THE GAMER
 			// Give coins etc.
@@ -25,6 +26,7 @@ public class AdManager : MonoBehaviour {
 		case ShowResult.Skipped:
 			Debug.Log ("The ad was skipped before reaching the end.");
 			Statics.coin += 20;
+			Statics.Save ();
 			break;
 		case ShowResult.Failed:
 			//Debug.LogError("The ad failed to be shown.");

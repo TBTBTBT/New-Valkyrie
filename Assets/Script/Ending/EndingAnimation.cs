@@ -24,7 +24,7 @@ public class EndingAnimation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (wf.color > 0 && isFadeIn==false)
-			wf.FadeIn (2);
+			wf.FadeIn (0.5f);
 		else {
 			isFadeIn = true;
 			actTime++;
@@ -34,33 +34,33 @@ public class EndingAnimation : MonoBehaviour {
 					isPlay = true;
 				}
 			}
-			if (actTime > 210) {
+			if (actTime > 250) {
 				if (pl2.transform.localScale.x > 0)
 					pl2.transform.localScale = new Vector2 (-2, 2);
 			}
-			if (actTime > 230) {
+			if (actTime > 330) {
 				exc.transform.position = new Vector2 (0.65f, 0.05f);
 			}
-			if (actTime > 290) {
+			if (actTime > 410) {
 				if (exc.transform.position.x > 0)
 					exc.transform.position = new Vector2 (-3, 0);
 			}
-			if (actTime > 330) {
+			if (actTime > 480) {
 				if (pl.transform.localScale.x > 0)
 					pl.transform.localScale = new Vector2 (-2, 2);
 			}
-			if (actTime > 360) {
+			if (actTime > 530) {
 			
 				pl.transform.position = new Vector2 (pl.transform.position.x - 0.01f, pl.transform.position.y);
 				if (pl.GetComponent<OpAnimator> ().animationNum == 0)
 					pl.GetComponent<OpAnimator> ().Action ();
 			}
-			if (actTime > 375) {
+			if (actTime > 545) {
 				pl2.transform.position = new Vector2 (pl2.transform.position.x - 0.01f, pl2.transform.position.y);
 				if (pl2.GetComponent<OpAnimator> ().animationNum == 0)
 					pl2.GetComponent<OpAnimator> ().Action ();
 			}
-			if (actTime > 400) {
+			if (actTime > 580) {
 				if (isFadeOut == false) {
 					isFadeOut = true;
 					wf.FadeOutCoroutine(()=>{Application.LoadLevel ("EndingRoll");});

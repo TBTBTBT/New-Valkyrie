@@ -22,6 +22,8 @@ public class EndingRoll : MonoBehaviour {
 		"\n<size=250>Special Thanks</size>\n",
 		"Kousuke",
 		"Madoca",
+		"Nao",
+		"Chiaki",
 		"Sagawa",
 		"Senzaki",
 		"Mizuki",
@@ -44,7 +46,8 @@ public class EndingRoll : MonoBehaviour {
 	public void Fade(){
 		if (isEnd == false) {
 			isEnd = true;
-			wf.FadeOutCoroutine(()=>{Application.LoadLevel ("RankingEntry");});
+			StartCoroutine (Stop());
+			wf.FadeOutCoroutineFast(()=>{Application.LoadLevel ("ThankYou");});
 		}
 	}
 	// Update is called once per frame
@@ -52,17 +55,22 @@ public class EndingRoll : MonoBehaviour {
 		transform.position = new Vector2 (transform.position.x,transform.position.y+0.005f);
 
 		if (transform.position.y > 7){
-			if (audioSource.volume > 0)
-				audioSource.volume -= 0.02f;
-			if (audioSource.volume <= 0)
-				audioSource.volume = 0;
+			
 			if (isEnd == false) {
 				isEnd = true;
-
+				StartCoroutine (Stop());
 				wf.FadeOutCoroutine (() => {
-					Application.LoadLevel ("RankingEntry");
+					Application.LoadLevel ("ThankYou");
 				});
 			}
 		}
+	}
+	IEnumerator Stop(){
+		while (audioSource.volume > 0) {
+			audioSource.volume -= 0.02f;
+			yield return new WaitForEndOfFrame ();
+		}
+		if (audioSource.volume <= 0)
+			audioSource.volume = 0;
 	}
 }
