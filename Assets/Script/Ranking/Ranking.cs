@@ -24,14 +24,17 @@ public class Ranking : MonoBehaviour {
 	float limitY = 0;
 	float accY = 0;
 	// Use this for initialization
-	void Send(){
+	void Send(int i){
 		NCMBObject testRank = new NCMBObject("Ranking");
 
 		// オブジェクトに値を設定
-		testRank["name"] = "Hello";
+		testRank["name"] = "てすたろう";
 		testRank["character"] = 0;
-		testRank["score"] = 300;
-		testRank["comment"] = "testテストてすと一言";
+		testRank["score"] = 1000+i*500;
+		testRank["combo"] = i+1;
+		testRank["isCleard"] = 1000;
+		testRank["level"] = 0;
+		testRank["comment"] = "おたま";
 		// データストアへの登録
 		testRank.SaveAsync(new NCMBCallback ((NCMBException e)=>{Debug.Log("succeed");}));
 	}
@@ -102,7 +105,7 @@ public class Ranking : MonoBehaviour {
 
 	}
 	void Start () {
-//	Send ();
+		//for(int i=0;i<15;i++)Send (i);
 
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
 		Get ();
@@ -130,29 +133,31 @@ public class Ranking : MonoBehaviour {
 		
 	}
 	float? beforeY = null;
-
+	float d=0;
 	bool dir = false;
 	void Move(int num){
 		if (num == 0) {
 			accY = 0;
 		if (beforeY != null) {
-				float d = TouchInput.GetTouchWorldPosition (cam, num).y - (float)beforeY;
+			    d = TouchInput.GetTouchWorldPosition (cam, num).y - (float)beforeY;
 				GetComponent<RectTransform> ().localPosition += new Vector3 (0, d*100, 0);
 				if(GetComponent<RectTransform> ().localPosition.y<0)GetComponent<RectTransform> ().localPosition = new Vector3 (0, 0, 0);
 				if(GetComponent<RectTransform> ().localPosition.y>limitY)GetComponent<RectTransform> ().localPosition = new Vector3 (0, limitY, 0);
 
 		}
 			beforeY = TouchInput.GetTouchWorldPosition (cam, num).y;
+		//	Debug.Log (d + "");
 		}
 	}
 	void EndMove(int num){
 		if (num == 0) {
-			float d = (TouchInput.GetTouchWorldPosition (cam, num).y - (float)beforeY)*100;
+		//	Debug.Log (d + "aa");
+		//	float d = (TouchInput.GetTouchWorldPosition (cam, num).y - (float)beforeY)*100;
 			if (d < 0) {
-				accY = -d;
+				accY = -d*100;
 				dir = false;
 			} else {
-				accY = d;
+				accY = d*100;
 				dir = true;
 			}
 			beforeY = null;

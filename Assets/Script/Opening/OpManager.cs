@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 public class OpManager : MonoBehaviour {
 	public AudioClip op;
@@ -10,6 +11,9 @@ public class OpManager : MonoBehaviour {
 	public  GameObject e;
 	public  GameObject f;
 	public  GameObject f2;
+
+	public  List<GameObject> dishes;
+
 	OpAnimator pa;
 	EnemyNormalAnimation p2a;
 	Vector2 player;
@@ -98,7 +102,7 @@ public class OpManager : MonoBehaviour {
 					}
 				}
 			}
-		} else if (actTime < 730) {
+		} else if (actTime < 710) {
 			if (enemy.x < 3f)
 				enemy.x += 0.02f;
 			if (enemy.y < 2f)
@@ -107,7 +111,7 @@ public class OpManager : MonoBehaviour {
 				player2.x += 0.02f;
 			if (player2.y < 2f)
 				player2.y += 0.02f;
-			if (actTime > 610 && actTime < 730)
+			if (actTime > 610 && actTime < 710)
 				f2.transform.position = new Vector2 (player.x, player.y + 0.4f);
 
 		} else if (actTime < 830) {
@@ -115,6 +119,9 @@ public class OpManager : MonoBehaviour {
 			pa.timeMax = 6;
 			if (player.x > -2f)
 				player.x -= 0.03f;
+			else {
+				if(actTime%10==0)Instantiate (dishes [Random.Range (0, 4)], new Vector3 (-1.9f, -0.3f, 0), Quaternion.identity);
+			}
 		}else if (actTime < 980) {
 			p.transform.localScale = new Vector2 (2,2);
 			if(pa.animationNum!=1)pa.Action ();

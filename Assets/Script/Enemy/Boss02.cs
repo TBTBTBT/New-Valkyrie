@@ -5,7 +5,6 @@ using System.Collections;
 public class Boss02 : EnemyBase {
 	int actTime = 0;
 	//int actNum = 0;
-	int dir = 0;
 	float ang = 0f;
 	float updown = 0;
 	int angry = 0;
@@ -33,7 +32,7 @@ public class Boss02 : EnemyBase {
 
 			//else if (actTime == 0)
 			int ra = Random.Range(0,3);
-			if(ra == 1)StartCoroutine ("Shot");
+			if(ra == 1)StartCoroutine (Shot());
 			if (ra == 0)Jump ();
 			if (ra == 2)
 				ang = 1;
@@ -92,7 +91,7 @@ public class Boss02 : EnemyBase {
 	IEnumerator Shot(){
 		for(int i=0;i<4 + level;i++){
 			anm.Attack ();
-			GameObject b = (GameObject)Instantiate (bullet, new Vector3 (direction == true?transform.position.x +0.2f:transform.position.x -0.2f,transform.position.y+0.25f,2),Quaternion.identity);
+			Instantiate (bullet, new Vector3 (direction == true?transform.position.x +0.2f:transform.position.x -0.2f,transform.position.y+0.25f,2),Quaternion.identity);
 			//b.GetComponent<Boss02Bullet> ().Direction(direction);
 			yield return new WaitForSeconds (0.65f-0.1f * level);
 		}

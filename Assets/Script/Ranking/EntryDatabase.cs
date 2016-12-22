@@ -5,8 +5,10 @@ using NCMB;
 public class EntryDatabase : MonoBehaviour {
 	public Text name;
 	public Text comment;
+	bool isSaveing = false;
 	public void Send(){
-		if(Statics.coin > 10){
+		if(Statics.coin > 10&&isSaveing == false){
+			isSaveing = true;
 			Statics.coin -= 10;
 			Statics.Save ();
 		NCMBObject testRank = new NCMBObject("Ranking");

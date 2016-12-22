@@ -5,8 +5,8 @@ using System.Collections;
 public class Boss03 : EnemyBase {
 	int actTime = 0;
 	//int actNum = 0;
-	int dir = 0;
-	float ang = 0f;
+//	int dir = 0;
+//	float ang = 0f;
 	float maxspd = 0;
 	int spddir = 0;
 	float updown = 0;
@@ -15,7 +15,7 @@ public class Boss03 : EnemyBase {
 	public GameObject bullet;
 	public GameObject bullet2;
 	public GameObject breakobj;
-	Vector3 pos;
+	//Vector3 pos;
 	// Use this for initialization
 	protected override void OverrideStart () {
 		anm = GetComponent<Boss02Animation> ();
@@ -23,7 +23,7 @@ public class Boss03 : EnemyBase {
 		hp = maxHp;
 	//	hp = 1;
 		atk += 10*level;
-		pos = transform.position;
+	//	pos = transform.position;
 	//	level = 5;
 	//	angry = 1;
 	}
@@ -41,7 +41,7 @@ public class Boss03 : EnemyBase {
 			int ra = Random.Range(0,2);
 			if(ra == 1)StartCoroutine ("Shot");
 			if (ra == 0)Jump ();
-				ang = 1;
+		//		ang = 1;
 		}
 		Move ();
 		Grav ();
@@ -53,7 +53,7 @@ public class Boss03 : EnemyBase {
 		StartCoroutine ("Shot2");
 		if (updown == 0) {
 			updown = 1;
-			dir = 0;
+		//	dir = 0;
 			maxspd = Random.Range(3.5f,4.5f);
 			if (transform.position.x <= 0)
 				spddir = 1;

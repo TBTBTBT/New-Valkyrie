@@ -8,26 +8,28 @@ public class EndingRoll : MonoBehaviour {
 	AudioSource audioSource; 
 	bool isEnd = false;
 	string[] endroll = new string[]{
-		"<size=350>Valkyrie's Axe</size>",
+		"<size=350>Valkyrie's OTAMA</size>",
 		"<size=350>CRESITS</size>\n",
-		"<size=250>Planning</size>\n",
+		"<size=250>Planning</size>",
 		"TBT",
-		"\n<size=250>Graphic Design</size>\n",
+		"\n<size=250>Graphic Design</size>",
 		"TBT",
 		"ton",
-		"\n<size=250>Sound</size>\n",
+		"MoWA",
+		"\n<size=250>Sound</size>",
 		"TBT",
-		"\n<size=250>Programming</size>\n",
+		"\n<size=250>Programming</size>",
 		"TBT",
-		"\n<size=250>Special Thanks</size>\n",
+		"\n<size=250>Special Thanks</size>",
 		"Kousuke",
 		"Madoca",
 		"Nao",
 		"Chiaki",
 		"Sagawa",
-		"Senzaki",
+		"S.Senzaki",
 		"Mizuki",
-		"Aika"
+		"Aika",
+		"Hajime"
 		
 	};
 	// Use this for initialization
