@@ -51,7 +51,7 @@ public class EnemySpawnerBase : MonoBehaviour {
 		bossIns = o;
 	}
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		time++;
 		if (isBossSpawn == true) {
 			if (bossIns == null) {

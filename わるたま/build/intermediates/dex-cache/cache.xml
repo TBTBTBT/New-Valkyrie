@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.0.0_dbbe527c2732f8b68ac8ad3a84bd12a14f47c500/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.0.0_3ec73d14912be219b5b84a109ea86a16d732bf1e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.0.0_36fcdc5aa788c09cc7439d48b2d91c89b4c85606/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/libs/unity-classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="1e5f0bba9ec09f6878042e5c4b4312c3fce2632a">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/2/unity-classes_cd4c82765798aa7e00e016dfbc1a90497816cbd9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="bbd186534b979eae30df9d0351d367e2cce84d2b">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a021e6f12fe5e4e4dc1cf15b22359d863292a8c0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/jars/libs/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="9c06126987c7a04e213e48d216531245e07530bc">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/8/unityadsrelease-unspecified-jars_2932803e741872042cffb63ce15c37ea37c4ff2a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="1ccfc2710a7ec7908463245491144ce77faa0428">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_60298099ba01950658974b2fe059fe2b010a167a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/libs/NcmbGcmPlugin.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="8e80f1f950c045921513682b15dbeb87cb81c61c">
+        <dex dex="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/transforms/dex/debug/folders/1000/2/NcmbGcmPlugin_bded1bdb6f1c5241848b364188a3348df899ced0/classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="NcmbGcmPlugin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/わるたま/libs/NcmbGcmPlugin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

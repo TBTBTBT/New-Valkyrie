@@ -45,7 +45,7 @@ public class Boss03Break : MonoBehaviour {
 		}
 	}
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
 		actTime++;
 		if (actTime > 150 &&  170 > actTime) {

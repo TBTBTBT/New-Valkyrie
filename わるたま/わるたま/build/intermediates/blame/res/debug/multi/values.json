@@ -1,0 +1,237 @@
+[
+    {
+        "outputFile": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 41,
+                    "endOffset": 92
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 2,
+                        "startOffset": 53,
+                        "endColumn": 39,
+                        "endOffset": 90
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 97,
+                    "endColumn": 62,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 62,
+                        "endOffset": 113
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 65,
+                    "endOffset": 221
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 118,
+                        "endColumn": 65,
+                        "endOffset": 179
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 226,
+                    "endColumn": 55,
+                    "endOffset": 277
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 184,
+                        "endColumn": 55,
+                        "endOffset": 235
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 282,
+                    "endColumn": 53,
+                    "endOffset": 331
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 240,
+                        "endColumn": 53,
+                        "endOffset": 289
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 336,
+                    "endColumn": 82,
+                    "endOffset": 414
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 294,
+                        "endColumn": 82,
+                        "endOffset": 372
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 419,
+                    "endColumn": 62,
+                    "endOffset": 477
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 377,
+                        "endColumn": 62,
+                        "endOffset": 435
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 482,
+                    "endColumn": 63,
+                    "endOffset": 541
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 440,
+                        "endColumn": 63,
+                        "endOffset": 499
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 546,
+                    "endColumn": 99,
+                    "endOffset": 641
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 504,
+                        "endColumn": 99,
+                        "endOffset": 599
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 646,
+                    "endColumn": 73,
+                    "endOffset": 715
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 604,
+                        "endColumn": 73,
+                        "endOffset": 673
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 720,
+                    "endColumn": 61,
+                    "endOffset": 777
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/intermediates/exploded-aar/わるたま/unityadsrelease/unspecified/res/values/values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 678,
+                        "endColumn": 61,
+                        "endOffset": 735
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 782,
+                    "endLine": 14,
+                    "endColumn": 8,
+                    "endOffset": 875
+                },
+                "from": {
+                    "file": "/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 0,
+                        "startOffset": 53,
+                        "endLine": 3,
+                        "endColumn": 8,
+                        "endOffset": 147
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="23"
+    density="hdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="776167695059462"
+    token="-8908439490739238739"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="1644" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="500" />
+    <task
+        name="verifier"
+        duration="224" />
+
+    <artifact
+        location="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/outputs/apk/わるたま-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="776167695059462"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/TBT/Documents/Unity/New Valkiry/Valkiry/わるたま/わるたま/build/outputs/apk/わるたま-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

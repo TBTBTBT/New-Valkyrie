@@ -14,7 +14,7 @@ public class Boss05Break : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		actTime++;
 		transform.position = pos + new Vector2 (Mathf.Sin(actTime * 80*Mathf.PI/180)*0.1f,0);
 		if (actTime > 120) {
